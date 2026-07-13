@@ -1,0 +1,124 @@
+code-server@code-server:~$ hostname
+code-server
+code-server@code-server:~$ whoami
+code-server
+code-server@code-server:~$ pwd
+/home/code-server
+code-server@code-server:~$ cd ~
+code-server@code-server:~$ echo "Linux VM Task - Stage 3 Answers" > stage3-answers.txt
+code-server@code-server:~$ echo "Username: $(whoami)" >> stage3-answers.txt
+code-server@code-server:~$ echo "VM IP: 192.168.100.54" >> stage3-answers.txt
+code-server@code-server:~$ echo "" >> stage3-answers.txt
+code-server@code-server:~$ echo "1. Current folder:" >> stage3-answers.txt
+code-server@code-server:~$ pwd | tee -a stage3-answers.txt
+/home/code-server
+code-server@code-server:~$ echo "" >> stage3-answers.txt
+code-server@code-server:~$ echo "2. Free RAM:" >> stage3-answers.txt
+code-server@code-server:~$ free -h | tee -a stage3-answers.txt
+               total        used        free      shared  buff/cache   available
+Mem:           3.3Gi       466Mi       2.7Gi       1.1Mi       334Mi       2.9Gi
+Swap:          2.2Gi          0B       2.2Gi
+code-server@code-server:~$ echo "" >> stage3-answers.txt
+code-server@code-server:~$ echo "3. Disk space free on /:" >> stage3-answers.txt
+code-server@code-server:~$ df -h / | tee -a stage3-answers.txt
+Filesystem                         Size  Used Avail Use% Mounted on
+/dev/mapper/ubuntu--vg-ubuntu--lv   12G  5.0G  5.8G  47% /
+code-server@code-server:~$ echo "" >> stage3-answers.txt
+code-server@code-server:~$ echo "4. Kernel version:" >> stage3-answers.txt
+code-server@code-server:~$ uname -r | tee -a stage3-answers.txt
+7.0.0-14-generic
+code-server@code-server:~$ echo "" >> stage3-answers.txt
+code-server@code-server:~$ cat stage3-answers.txt
+Linux VM Task - Stage 3 Answers
+Username: code-server
+VM IP: 192.168.100.54
+
+1. Current folder:
+/home/code-server
+
+2. Free RAM:
+               total        used        free      shared  buff/cache   available
+Mem:           3.3Gi       466Mi       2.7Gi       1.1Mi       334Mi       2.9Gi
+Swap:          2.2Gi          0B       2.2Gi
+
+3. Disk space free on /:
+Filesystem                         Size  Used Avail Use% Mounted on
+/dev/mapper/ubuntu--vg-ubuntu--lv   12G  5.0G  5.8G  47% /
+
+4. Kernel version:
+7.0.0-14-generic
+
+code-server@code-server:~$ echo "5. VM uptime:" >> stage3-answers.txt
+code-server@code-server:~$ uptime | tee -a stage3-answers.txt
+ 05:58:21 up 24 min,  2 users,  load average: 0.00, 0.05, 0.07
+code-server@code-server:~$ mkdir -p apps/logs
+code-server@code-server:~$ echo "" >> stage3-answers.txt
+code-server@code-server:~$ echo "6. Created folders apps/logs:" >> stage3-answers.txt
+code-server@code-server:~$ ls -ld apps apps/logs | tee -a stage3-answers.txt
+drwxrwxr-x 3 code-server code-server 4096 Jul 13 05:58 apps
+drwxrwxr-x 2 code-server code-server 4096 Jul 13 05:58 apps/logs
+code-server@code-server:~$ nano about-me.txt
+code-server@code-server:~$ echo "" >> stage3-answers.txt
+code-server@code-server:~$ echo "7. about-me.txt content:" >> stage3-answers.txt
+code-server@code-server:~$ cat about-me.txt | tee -a stage3-answers.txt
+Name: Aaisha Al-Rubaie
+Favorite language: HTML
+code-server@code-server:~$ cp about-me.txt apps/about-me.txt
+code-server@code-server:~$ mv apps/about-me.txt apps/profile.txt
+code-server@code-server:~$ rm about-me.txt
+code-server@code-server:~$ echo "" >> stage3-answers.txt
+code-server@code-server:~$ echo "8. Copied about-me.txt into apps, renamed it to profile.txt, then deleted original:" >> stage3-answers.txt
+code-server@code-server:~$ ls -lh apps/profile.txt | tee -a stage3-answers.txt
+-rw-rw-r-- 1 code-server code-server 47 Jul 13 06:04 apps/profile.txt
+code-server@code-server:~$ echo "" >> stage3-answers.txt
+code-server@code-server:~$ echo "9. apps folder with sizes and dates:" >> stage3-answers.txt
+code-server@code-server:~$ ls -lh apps | tee -a stage3-answers.txt
+total 8.0K
+drwxrwxr-x 2 code-server code-server 4.0K Jul 13 05:58 logs
+-rw-rw-r-- 1 code-server code-server   47 Jul 13 06:04 profile.txt
+code-server@code-server:~$ echo "" >> stage3-answers.txt
+code-server@code-server:~$ echo "10. Number of running processes:" >> stage3-answers.txt
+code-server@code-server:~$ ps aux | wc -l | tee -a stage3-answers.txt
+123
+code-server@code-server:~$ cat stage3-answers.txt
+Linux VM Task - Stage 3 Answers
+Username: code-server
+VM IP: 192.168.100.54
+
+1. Current folder:
+/home/code-server
+
+2. Free RAM:
+               total        used        free      shared  buff/cache   available
+Mem:           3.3Gi       466Mi       2.7Gi       1.1Mi       334Mi       2.9Gi
+Swap:          2.2Gi          0B       2.2Gi
+
+3. Disk space free on /:
+Filesystem                         Size  Used Avail Use% Mounted on
+/dev/mapper/ubuntu--vg-ubuntu--lv   12G  5.0G  5.8G  47% /
+
+4. Kernel version:
+7.0.0-14-generic
+
+5. VM uptime:
+ 05:58:21 up 24 min,  2 users,  load average: 0.00, 0.05, 0.07
+
+6. Created folders apps/logs:
+drwxrwxr-x 3 code-server code-server 4096 Jul 13 05:58 apps
+drwxrwxr-x 2 code-server code-server 4096 Jul 13 05:58 apps/logs
+
+7. about-me.txt content:
+Name: Aaisha Al-Rubaie
+Favorite language: HTML
+
+8. Copied about-me.txt into apps, renamed it to profile.txt, then deleted original:
+-rw-rw-r-- 1 code-server code-server 47 Jul 13 06:04 apps/profile.txt
+
+9. apps folder with sizes and dates:
+total 8.0K
+drwxrwxr-x 2 code-server code-server 4.0K Jul 13 05:58 logs
+-rw-rw-r-- 1 code-server code-server   47 Jul 13 06:04 profile.txt
+
+10. Number of running processes:
+123
+code-server@code-server:~$
